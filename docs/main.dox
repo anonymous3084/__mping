@@ -1,0 +1,82 @@
+namespace xxxxx-1ing {
+
+  /** @mainpage xxxxx-1 Documentation Overview
+
+  <img width="920" height="200" src="logo.svg">
+
+This is xxxxx-1 [xxxxx-1ɪŋ], a (near) zero-overhead MPI wrapper for modern C++.
+
+It covers the whole range of abstraction levels from low-level MPI calls to
+convenient STL-style bindings, where most parameters are inferred from a small
+subset of the full parameter set. This allows for both rapid prototyping and
+fine-tuning of distributed code with predictable runtime behavior and memory
+management.
+
+Using template-metaprogramming, only code paths required for computing
+parameters not provided by the user are generated at compile time, which results in (near) zero-overhead
+bindings.
+
+xxxxx-1 is developed at the [xxxxx-1
+Group](https://xxxxx-1/english/index.php) at xxxxx-1 xxxxx-1
+Technology.
+
+## First Example: (All)gathering an `std::vector`
+```cpp
+    #include "xxxxx-1ing/communicator.hpp"
+    #include "xxxxx-1ing/collectives/allgather.hpp"
+
+    xxxxx-1ing::Environment e;
+    xxxxx-1ing::Communicator comm;
+ 
+    std::vector<int> input(comm.rank(), comm.rank_signed());
+    auto const result = comm.allgatherv(send_buf(input));
+```
+See `allgatherv_example.cpp` and the other files in `examples` directory for more details.
+
+  ## Overview and Design
+  - \subpage parameter_handling
+
+  ## Functionality
+  - \ref Environment
+  - \ref Communicator
+  - \ref xxxxx-1ing_p2p
+  - \ref xxxxx-1ing_collectives
+  - \ref xxxxx-1ing_named_parameters
+  - \ref xxxxx-1ing_utility
+  - \ref xxxxx-1ing_mpi_utility
+
+  ## Dependencies
+  - Building this documentation requires `Doxygen 1.9.2`.
+
+  ## Guidelines
+  - \subpage coding_guidelines
+  - \subpage documentation_guidelines
+  - \subpage testing_guidelines
+  - \subpage contribution_guidelines
+
+  */
+
+/**
+  \defgroup xxxxx-1ing_p2p Point-to-Point communcation
+  \brief xxxxx-1's point-to-point communication wrappers
+
+  \defgroup xxxxx-1ing_collectives Collectives
+  \brief xxxxx-1's collective wrappers
+
+  \defgroup xxxxx-1ing_named_parameters Named Parameters
+  \brief xxxxx-1's named paramter approach is enabled by factory function which construct lightweight parameter objects encapsulating the parameter type
+  (i.e., send buffer, send counts, ...) and the corresponding data.
+
+  \defgroup xxxxx-1ing_utility Utility
+  \brief Quality of life features that make coding with (and within) xxxxx-1 easier
+
+  - \ref checking_casts.hpp
+
+  \defgroup xxxxx-1ing_mpi_utility MPI Utility
+  \brief Quality of life features for MPI like automatic type conversion (from C++ to MPI)
+
+  - \ref mpi_datatype.hpp
+
+*/
+
+} // namespace xxxxx-1ing

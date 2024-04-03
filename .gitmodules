@@ -1,0 +1,18 @@
+[submodule "extern/googletest"]
+	path = extern/googletest
+	url = https://github.com/google/googletest
+[submodule "extern/doxygen-awesome-css"]
+	path = extern/doxygen-awesome-css
+	url = https://github.com/jothepro/doxygen-awesome-css.git
+[submodule "extern/kassert"]
+	path = extern/kassert
+	url = https://github.com/xxxxx-1ing-site/kassert.git
+[submodule "extern/pfr"]
+	path = extern/pfr
+	url = https://github.com/apolukhin/pfr_non_boost
+[submodule "extern/cereal"]
+	path = extern/cereal
+	url = https://github.com/USCiLab/cereal
+[submodule "cmake/Format.cmake"]
+	path = cmake/Format.cmake
+	url = https://github.com/TheLartians/Format.cmake
